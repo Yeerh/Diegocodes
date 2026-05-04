@@ -1,7 +1,8 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
+    darkMode: ["class"],
+    content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,8 +10,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "var(--bg-primary)",
+        foreground: "var(--text-primary)",
+        accent: "var(--accent-primary)",
+        panel: "var(--bg-panel)",
+      },
+      fontFamily: {
+        sans: ["var(--font-inter)", "sans-serif"],
+        display: ["var(--font-bebas)", "sans-serif"],
+        accent: ["var(--font-space-grotesk)", "sans-serif"],
+      },
+      animation: {
+        marquee: "marquee 22s linear infinite",
+        "spin-slow": "spin-slow 20s linear infinite",
+        "pulse-soft": "pulse-soft 2s ease-in-out infinite",
       },
     },
   },
