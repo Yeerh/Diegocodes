@@ -4,6 +4,34 @@ import SpotlightPanel from "@/components/ui/SpotlightPanel";
 
 const projects = [
   {
+    name: "Cleyton Vieira",
+    href: "https://cleytonvieira.vercel.app",
+    category: "Personal trainer",
+    description:
+      "Landing page fitness focada em captar alunos, organizar anamnese e apresentar acompanhamento personalizado com clareza.",
+    result:
+      "Capta novos alunos com uma jornada direta de interesse, anamnese e contato",
+    layoutClass: "lg:col-span-2",
+    imageSrc: "/projects/cleyton-vieira-cover.png",
+    imageAlt:
+      "Prévia do projeto Cleyton Vieira com landing page fitness e personagem ilustrado.",
+    imageClassName: "object-center",
+  },
+  {
+    name: "Holanda Personal",
+    href: "https://holandapersonal.vercel.app",
+    category: "Personal trainer · Coach fitness",
+    description:
+      "Landing page premium para personal trainer com posicionamento forte, prova social e CTA direto para transformar visitas em conversas no WhatsApp.",
+    result:
+      "Oferta clara para vender consultoria, método e acompanhamento com mais autoridade",
+    layoutClass: "",
+    imageSrc: "/projects/holanda-personal-cover.svg",
+    imageAlt:
+      "Prévia do projeto Holanda Personal com identidade preta e laranja.",
+    imageClassName: "object-center",
+  },
+  {
     name: "RastroMoville",
     href: "https://rastromoville.vercel.app",
     category: "Gestão de frota",
@@ -43,20 +71,6 @@ const projects = [
     imageSrc: "/projects/pernambuco-em-foco-cover.png",
     imageAlt:
       "Prévia do projeto Pernambuco Em Foco com praia e identidade visual do portal.",
-    imageClassName: "object-center",
-  },
-  {
-    name: "Cleyton Vieira",
-    href: "https://cleytonvieira.vercel.app",
-    category: "Landing fitness",
-    description:
-      "Portfólio focado em agendamento de sessões e anamnese para clientes, com gestão de treinos e acompanhamento personalizado.",
-    result:
-      "Captação, anamnese e acompanhamento em um fluxo mais claro para o aluno",
-    layoutClass: "lg:col-span-2",
-    imageSrc: "/projects/cleyton-vieira-cover.png",
-    imageAlt:
-      "Prévia do projeto Cleyton Vieira com landing page fitness e personagem ilustrado.",
     imageClassName: "object-center",
   },
 ] as const;
@@ -149,7 +163,7 @@ export default function Projects() {
                         Ver projeto completo
                       </span>
                       <span className="inline-flex h-11 items-center justify-center rounded-full border border-[var(--accent-primary)]/35 bg-[var(--accent-primary)]/12 px-5 font-accent text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--accent-hover)] transition duration-300 group-hover:bg-[var(--accent-primary)] group-hover:text-white">
-                        Abrir site ↗
+                        Abrir site →
                       </span>
                     </div>
                   </div>

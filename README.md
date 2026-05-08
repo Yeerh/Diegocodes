@@ -153,8 +153,8 @@ A landing foi desenhada para reduzir fricção em decisões rápidas:
 Crie um arquivo `.env.local` com:
 
 ```env
-NEXT_PUBLIC_WHATSAPP_NUMBER=5581999999999
-NEXT_PUBLIC_PORTFOLIO_URL=https://seu-dominio-ou-vercel-url.com
+NEXT_PUBLIC_WHATSAPP_NUMBER=5581992388506
+NEXT_PUBLIC_PORTFOLIO_URL=https://diegocodes-dev.vercel.app
 ```
 
 ### Uso

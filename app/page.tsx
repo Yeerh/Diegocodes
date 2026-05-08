@@ -28,7 +28,8 @@ const Footer = dynamic(() => import("@/components/Footer"), {
   loading: () => <SectionFallback className="h-[120px]" />,
 });
 
-const fallbackWhatsAppNumber = "5581999999999";
+const defaultWhatsAppNumber = "5581992388506";
+const invalidWhatsAppNumbers = new Set(["5581999999999"]);
 const prefilledMessage = encodeURIComponent(
   "Oi, Diego! Vim pelo Instagram e quero um site para o meu negócio."
 );
@@ -43,14 +44,19 @@ function SectionFallback({ className }: { className?: string }) {
   );
 }
 
+function getWhatsAppNumber(rawValue?: string) {
+  const normalizedWhatsAppNumber = rawValue?.replace(/\D/g, "") ?? "";
+
+  return normalizedWhatsAppNumber.length >= 12 &&
+    !invalidWhatsAppNumbers.has(normalizedWhatsAppNumber)
+    ? normalizedWhatsAppNumber
+    : defaultWhatsAppNumber;
+}
+
 export default function Home() {
-  const rawWhatsAppNumber =
-    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5581XXXXXXXXX";
-  const normalizedWhatsAppNumber = rawWhatsAppNumber.replace(/\D/g, "");
-  const whatsappNumber =
-    normalizedWhatsAppNumber.length >= 12
-      ? normalizedWhatsAppNumber
-      : fallbackWhatsAppNumber;
+  const whatsappNumber = getWhatsAppNumber(
+    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
+  );
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${prefilledMessage}`;
 
   return (

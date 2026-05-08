@@ -2,8 +2,31 @@ import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, Inter, Space_Grotesk } from "next/font/google";
 import "../styles/globals.css";
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_PORTFOLIO_URL ?? "https://diegosilvaport.vercel.app";
+const defaultSiteUrl = "https://diegocodes-dev.vercel.app";
+const legacySiteUrl = "https://diegosilvaport.vercel.app";
+
+function getSiteUrl() {
+  const configuredSiteUrl = process.env.NEXT_PUBLIC_PORTFOLIO_URL?.trim();
+
+  if (!configuredSiteUrl) {
+    return defaultSiteUrl;
+  }
+
+  try {
+    const normalizedSiteUrl = new URL(configuredSiteUrl).toString().replace(
+      /\/$/,
+      ""
+    );
+
+    return normalizedSiteUrl === legacySiteUrl
+      ? defaultSiteUrl
+      : normalizedSiteUrl;
+  } catch {
+    return defaultSiteUrl;
+  }
+}
+
+const siteUrl = getSiteUrl();
 
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
@@ -38,11 +61,13 @@ export const metadata: Metadata = {
     "freelancer Recife",
     "site para clínica",
     "site para barbearia",
+    "site para personal trainer",
+    "site para coach fitness",
     "landing page restaurante",
     "Next.js Recife",
   ],
   alternates: {
-    canonical: "/",
+    canonical: siteUrl,
   },
   openGraph: {
     title: "Diego Codes | Sites que transformam visitas em clientes",

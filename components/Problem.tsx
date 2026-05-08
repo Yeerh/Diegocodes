@@ -28,6 +28,14 @@ const painPoints = [
   },
 ] as const;
 
+const supportedSegments = [
+  "Barbearia",
+  "Clínica",
+  "Personal Trainer · Coach Fitness",
+  "Salão de beleza",
+  "Restaurante",
+] as const;
+
 export default function Problem() {
   return (
     <section className="section-space">
@@ -37,6 +45,19 @@ export default function Problem() {
           <h2 className="section-title mt-5">
             Seu negócio existe. Mas o cliente não te acha.
           </h2>
+          <p className="mt-5 max-w-3xl font-accent text-sm font-medium uppercase tracking-[0.18em] text-[var(--text-secondary)]">
+            Nichos atendidos
+          </p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            {supportedSegments.map((segment) => (
+              <span
+                key={segment}
+                className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[10px] font-accent font-semibold uppercase tracking-[0.24em] text-white/78"
+              >
+                {segment}
+              </span>
+            ))}
+          </div>
         </Reveal>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
