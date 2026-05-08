@@ -26,7 +26,7 @@ const projects = [
     result:
       "Oferta clara para vender consultoria, método e acompanhamento com mais autoridade",
     layoutClass: "",
-    imageSrc: "/projects/holanda-personal-cover.svg",
+    imageSrc: "/projects/holanda-personal-cover.png",
     imageAlt:
       "Prévia do projeto Holanda Personal com identidade preta e laranja.",
     imageClassName: "object-center",
